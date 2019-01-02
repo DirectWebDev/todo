@@ -1,0 +1,54 @@
+@charset "UTF-8";
+/*Top Menü*/
+body {
+  background-color: lightgrey; }
+
+h3 {
+  font-size: 1.5em;
+  font-weight: 200; }
+
+.tasks {
+  box-shadow: 5px 5px 20px #0065B2;
+  max-width: 720px;
+  margin: 50px auto;
+  padding-left: 20px;
+  background-color: white; }
+
+i {
+  color: #0065B2;
+  margin-right: 10px;
+  margin-top: 5px; }
+
+.options i {
+  color: red;
+  font-size: 1.5em; }
+
+.options i:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 10px red; }
+
+.top-bar {
+  background-color: #0065B2;
+  color: white; }
+
+.top-bar ul {
+  background-color: #0065B2;
+  color: white; }
+
+.top-bar ul li a {
+  color: white; }
+
+.all ul {
+  margin-top: 20px;
+  list-style-type: none; }
+
+.all ul li {
+  background-color: lightgrey;
+  border: 1px solid #0065B2;
+  padding: 5px;
+  margin-bottom: 10px; }
+
+.all ul li p {
+  margin: 0px; }
+
+/*# sourceMappingURL=app.css.map */

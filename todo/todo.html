@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/css/vendor/foundation.css">
+    <link rel="stylesheet" href="src/css/app.css">
+
+    <!-- Vue.JS Dev. Version -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+ 
+        <!-- Head Bereich mit Eingabe -->
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+              <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">To Do App</li>
+                <li><input type="search" placeholder="z.b. Vue.JS lernen.."></li>
+                <li><button type="button" class="button">Aufgabe hinzufügen</button></li>
+              </ul>
+            </div>
+      </div>
+    </header>
+
+    <main id="app">
+        <!-- Bereich für alle Aufgaben -->
+        <div class="grid-x tasks all">
+            <div class="cell small-10">
+                <h3><i class="fas fa-globe"></i>Alle Aufgaben</h3>
+                <ul>
+                <li v-for="(task, index) in tasks">
+                    <p>{{task.desc}}</p></li>
+                </ul>
+            </div>
+            
+            <div class="cell small-2 options">
+              <i class="fas fa-trash-alt"></i>
+            </div>
+          </div>
+
+        <!-- Bereich für alle Aufgaben -->
+        <div class="grid-x tasks open ">
+            <div class="cell"><h3><i class="fas fa-calendar-alt"></i>Zu erledigen</h3></div>
+          </div>
+
+        <!-- Bereich für alle Aufgaben -->
+        <div class="grid-x tasks done">
+            <div class="cell"><h3><i class="fas fa-check-circle"></i>Erledigt</h3></div>
+          </div>
+    </main>
+
+    <script src="src/js/vendor/jquery.js"></script>
+    <script src="src/js/vendor/what-input.js"></script>
+    <script src="src/js/vendor/foundation.js"></script>
+    <script src="src/js/app.js"></script>
+
+
+</body>
+</html>
