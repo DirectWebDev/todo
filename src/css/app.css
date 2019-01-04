@@ -14,14 +14,15 @@ h3 {
 }
 
 .tasks {
-  box-shadow: 5px 5px 20px #0065B2;
+  -webkit-box-shadow: 5px 5px 20px #0065B2;
+          box-shadow: 5px 5px 20px #0065B2;
   max-width: 720px;
   margin: 50px auto;
   padding-left: 20px;
   background-color: white;
 }
 
-i {
+.main-icon {
   color: #0065B2;
   margin-right: 10px;
   margin-top: 5px;
@@ -30,36 +31,109 @@ i {
 .options i {
   color: red;
   font-size: 1.5em;
+  margin-right: 10px;
+  margin-top: 5px;
 }
+
 .options i:hover {
   cursor: pointer;
-  box-shadow: 3px 3px 10px red;
+  -webkit-box-shadow: 3px 3px 10px red;
+          box-shadow: 3px 3px 10px red;
 }
 
 .top-bar {
   background-color: #0065B2;
   color: white;
 }
+
 .top-bar ul {
   background-color: #0065B2;
   color: white;
 }
+
 .top-bar a {
   color: white;
 }
 
-.all ul {
+#app {
+  /*Check Button*/
+  /*Tash Button*/
+}
+
+#app ul button {
+  float: right;
+  font-size: 1.3em;
+}
+
+#app button.check {
+  background-color: white;
+  border-radius: 50%;
+  padding: 0 2px 0 2px;
+  margin-left: 10px;
+}
+
+#app button.check i {
+  color: green;
+  font-size: 1.15em;
+}
+
+#app button.check:hover {
+  background-color: green;
+}
+
+#app button.check:hover i {
+  color: white;
+}
+
+#app .task-done {
+  text-decoration: line-through;
+}
+
+#app .task-done button.check {
+  background-color: darkblue;
+}
+
+#app .task-done button.check i {
+  color: white;
+}
+
+#app button.delete {
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+#app button.delete i {
+  color: red;
+}
+
+#app button.delete:hover {
+  background-color: red;
+}
+
+#app button.delete:hover i {
+  color: white;
+}
+
+#app .all ul,
+#app .open ul,
+#app .done ul {
   margin-top: 20px;
   list-style-type: none;
 }
-.all li {
+
+#app .all li,
+#app .open li,
+#app .done li {
   background-color: lightgrey;
   border: 1px solid #0065B2;
   padding: 5px;
   margin-bottom: 10px;
 }
-.all p {
+
+#app .all p,
+#app .open p,
+#app .done p {
   margin: 0px;
 }
-
 /*# sourceMappingURL=app.css.map */

@@ -16,43 +16,57 @@
 </head>
 <body>
  
-        <!-- Head Bereich mit Eingabe -->
-    <header>
-        <div class="top-bar">
-            <div class="top-bar-left">
-              <ul class="dropdown menu" data-dropdown-menu>
-                <li class="menu-text">To Do App</li>
-                <li><input type="search" placeholder="z.b. Vue.JS lernen.."></li>
-                <li><button type="button" class="button">Aufgabe hinzufügen</button></li>
-              </ul>
-            </div>
-      </div>
-    </header>
 
     <main id="app">
+                <!-- Head Bereich mit Eingabe -->
+    <header>
+            <div class="top-bar">
+                <div class="top-bar-left">
+                  <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">To Do App</li>
+                    <li><input id="newTask" v-model="newTask" type="search" placeholder="z.b. Vue.JS lernen.."></li>
+                    <li><button class="button addTask" @click="addTask" type="button">Aufgabe hinzufügen</button></li>
+                  </ul>
+                </div>
+          </div>
+        </header>
         <!-- Bereich für alle Aufgaben -->
         <div class="grid-x tasks all">
             <div class="cell small-10">
-                <h3><i class="fas fa-globe"></i>Alle Aufgaben</h3>
+                <h3><i class="fas fa-globe main-icon"></i>Alle Aufgaben</h3>
                 <ul>
-                <li v-for="(task, index) in tasks">
-                    <p>{{task.desc}}</p></li>
+                <li v-for="(task, index) in tasks" :class="{'task-done' : task.fertig}">
+                    <p>{{task.desc}}
+                        <button class="check" @click="changeTask(index)"><i class="fas fa-check"></i></button>
+                        <button class="delete" @click="deleteTask(index)"><i class="fas fa-trash-alt"></i></button>
+                    </p>
+                </li>
                 </ul>
             </div>
             
             <div class="cell small-2 options">
-              <i class="fas fa-trash-alt"></i>
+                <button class="delete" ><i class="fas fa-trash-alt"></i></button>
             </div>
           </div>
 
         <!-- Bereich für alle Aufgaben -->
-        <div class="grid-x tasks open ">
-            <div class="cell"><h3><i class="fas fa-calendar-alt"></i>Zu erledigen</h3></div>
+        <div class="grid-x tasks open">
+            <div class="cell"><h3><i class="fas fa-calendar-alt main-icon"></i>Zu erledigen</h3></div>
+             <ul>
+                <li v-for="(task, index) in taskOpen">
+                    <p>{{task.desc}}</p>
+                </li>
+                </ul>
           </div>
 
         <!-- Bereich für alle Aufgaben -->
         <div class="grid-x tasks done">
-            <div class="cell"><h3><i class="fas fa-check-circle"></i>Erledigt</h3></div>
+            <div class="cell"><h3><i class="fas fa-check-circle main-icon"></i>Erledigt</h3></div>
+            <ul>
+                <li v-for="(task, index) in taskDone">
+                    <p>{{task.desc}}</p>
+                </li>
+            </ul>
           </div>
     </main>
 
